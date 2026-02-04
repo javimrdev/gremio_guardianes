@@ -1,0 +1,204 @@
+---
+
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Guardianes del Gremio</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --header-h: 72px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding-top: var(--header-h);
+        background: radial-gradient(
+          1200px 600px at 50% -20%,
+          #193327 0%,
+          #0e1c16 50%,
+          #0a1410 100%
+        );
+        color: #e7e4db;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Ubuntu,
+          Cantarell,
+          Noto Sans,
+          sans-serif;
+      }
+      header.site {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        height: var(--header-h);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(13, 26, 20, 0.6);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(118, 172, 137, 0.16);
+        z-index: 10;
+      }
+      .logo { display: inline-flex; align-items: center; gap: 0.6rem; color: #f2e9d8; font-weight: 700; letter-spacing: 0.04em; }
+      .logo svg { width: 40px; height: 40px; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35)); }
+      .logo .wordmark { font-size: 1rem; text-transform: uppercase; }
+      main.landing {
+        position: relative;
+        width: min(920px, 92vw);
+        padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 3vw, 2rem);
+        text-align: center;
+      }
+      h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        letter-spacing: 0.02em;
+      }
+      p {
+        margin: 0 auto;
+        max-width: 68ch;
+        font-size: clamp(1rem, 2.3vw, 1.2rem);
+        line-height: 1.7;
+        opacity: 0.92;
+      }
+      .decor {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.45));
+      }
+      .decor.left {
+        left: max(-8vw, -140px);
+      }
+      .decor.right {
+        right: max(-8vw, -140px);
+      }
+      .character-wrap {
+        display: inline-block;
+      }
+      .character {
+        width: clamp(120px, 12vw, 180px);
+        height: auto;
+      }
+      .mirror {
+        transform: scaleX(-1);
+      }
+      .float {
+        animation: bob 5.2s ease-in-out infinite;
+      }
+      @keyframes bob {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      .brand {
+        display: inline-block;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #2b5a45 0%, #3e7b5e 100%);
+        color: #f2e9d8;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .card {
+        border-radius: 16px;
+        padding: clamp(1.25rem, 3vw, 2rem);
+        background: rgba(19, 34, 27, 0.55);
+        outline: 1px solid rgba(118, 172, 137, 0.16);
+        backdrop-filter: blur(6px);
+      }
+      .discord-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1.25rem;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        background: #5865F2;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 8px 18px rgba(88, 101, 242, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .discord-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(88, 101, 242, 0.45); }
+      .discord-btn:active { transform: translateY(0); }
+      .discord-btn svg { width: 22px; height: 22px; }
+      @media (max-width: 780px) {
+        .decor.left,
+        .decor.right {
+          display: none;
+        }
+        main.landing {
+          width: 94vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="logo">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="crest" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2b5a45"/>
+              <stop offset="100%" stop-color="#3e7b5e"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 6 L50 16 V32 C50 44 41 54 32 58 C23 54 14 44 14 32 V16 Z" fill="url(#crest)"/>
+          <circle cx="32" cy="26" r="7" fill="#d4b870"/>
+          <rect x="24" y="34" width="16" height="5" rx="2.5" fill="#223b2e"/>
+        </svg>
+        <span class="wordmark">Guardianes</span>
+      </div>
+    </header>
+    <main class="landing">
+      <div class="decor left">
+        <div class="character-wrap float">
+          <img class="character" src="/yop.png" alt="Yopuka" />
+        </div>
+      </div>
+      <div class="decor right">
+        <div class="character-wrap float">
+          <img class="character mirror" src="/sram.png" alt="Sram" />
+        </div>
+      </div>
+      <div class="card">
+        <span class="brand">Gremio Dofus</span>
+        <h1>Guardianes del Gremio</h1>
+        <p>
+          Somos una comunidad de aventureros en Dofus dedicada a la cooperación,
+          el progreso y la diversión. Aquí encontrarás mazmorras organizadas,
+          ayuda para optimización de builds y eventos semanales. Únete a
+          nuestros Guardianes y forja tu leyenda en el Mundo de los Doce.
+        </p>
+        <a class="discord-btn" href="https://discord.gg/guardianes-fake" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="white" d="M20 4.5c-1.6-.7-3.4-1.2-5.2-1.3l-.5 1.1c-1.1-.2-2.3-.2-3.4 0l-.5-1.1C7.6 3.4 5.8 3.9 4.2 4.6 2.4 7 1.9 9.3 2 11.5c1.9 1.4 3.7 2.2 5.5 2.6l.8-1.2c-.4-.1-.8-.3-1.2-.5.1-.1.2-.1.3-.2 2.2 1 4.6 1 6.8 0 .1.1.2.1.3.2-.4.2-.8.4-1.2.5l.8 1.2c1.8-.4 3.6-1.2 5.5-2.6.2-2.3-.3-4.6-1.6-6.5ZM9.3 11.7c-.7 0-1.3-.7-1.3-1.6s.6-1.6 1.3-1.6c.7 0 1.3.7 1.3 1.6s-.6 1.6-1.3 1.6Zm5.4 0c-.7 0-1.3-.7-1.3-1.6s.6-1.6 1.3-1.6 1.3.7 1.3 1.6-.6 1.6-1.3 1.6Z"/>
+          </svg>
+          <span>Únete a nuestro Discord</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
